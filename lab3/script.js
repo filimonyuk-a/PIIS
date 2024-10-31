@@ -93,7 +93,7 @@ function openQuickView(num) {
 const closeModal = document.getElementsByClassName("close")[0];
 console.log(closeModal.textContent)
 closeModal.onclick = function() {
-    console.log("JOPA")
+    console.log("qqq")
     const modal = document.getElementById("quickViewModal");
     modal.style.display = "none"; // Скрываем модальное окно
 }
