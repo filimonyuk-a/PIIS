@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(226, 226, 221); /* Фоновый цвет */
+    font-family: 'Arial', sans-serif; /* Шрифт */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    text-align: center; /* Центрирование текста */
+}
+
+.container h2 {
+    font-size: 30px; /* Размер заголовка */
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: rgb(132, 43, 43); /* Цвет заголовка */
+}
+
+.shirt-card {
+    display: flex;
+    align-items: center;
+    margin: 15px 0; /* Отступ между карточками */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Легкая тень */
+    border-radius: 10px; /* Скругление углов */
+    padding: 10px; /* Внутренние отступы */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Эффекты при наведении */
+}
+
+.shirt-card:hover {
+    transform: translateY(-5px); /* Подъем карточки при наведении */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+}
+
+.text-content {
+    margin-left: 20px;
+}
+
+.text-content h4 {
+    font-size: 18px; /* Размер заголовка карточки */
+    font-weight: 500; /* Увеличенный вес шрифта */
+    color: #333; /* Цвет текста */
+}
+
+.side-buttons::before,
+.color-buttons::before {
+    color: rgb(132, 43, 43);
+    margin-right: 10px;
+    font-weight: 500; /* Увеличенный вес шрифта */
+}
+
+.side-buttons,
+.color-buttons {
+    margin-bottom: 15px;
+}
+
+.side-buttons button,
+.color-buttons button {
+    margin-right: 10px;
+    border: none;
+    color: aliceblue; /* Цвет текста кнопок */
+    background-color: black; /* Цвет фона кнопок */
+    border-radius: 10px; /* Скругление углов кнопок */
+    width: 70px; /* Ширина кнопок */
+    height: 35px; /* Высота кнопок */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Эффект при наведении */
+}
+
+.side-buttons button:hover,
+.color-buttons button:hover {
+    background-color: rgb(132, 43, 43); /* Цвет кнопок при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
