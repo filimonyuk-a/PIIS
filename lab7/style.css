@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e9ecef;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #343a40;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+    color: #495057;
+}
+
+label {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #fff200;
+}
+
+svg {
+    border: 2px solid #343a40;
+    cursor: crosshair;
+    background-color: #fff;
+    width: 80%;
+    max-width: 600px;
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 12px 20px;
+    margin-top: 15px;
+    background-color: #ff0095;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #00b327;
+    transform: translateY(-2px);
+}
+
+footer {
+    margin-top: 20px;
+    color: #6c757d;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+    label {
+        font-size: 1rem;
+    }
+    button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+let isDrawing = false;
+let startX, startY;
+let currentShape;
+
+let shapes = [];
+
+canvas.addEventListener('mousedown', event => {
+	isDrawing = true;
+	startX = event.offsetX;
+	startY = event.offsetY;
+
+	const shapeSelector = document.getElementsByName('shape');
+	let selectedValue;
+	for (const shape of shapeSelector) {
+		if (shape.checked) {
+			selectedValue = shape.value;
+			break;
+		}
+	}
+
+	currentShape = selectedValue;
+});
+
+canvas.addEventListener('mousemove', event => {
+	if (!isDrawing) return;
+
+	const currentX = event.offsetX;
+	const currentY = event.offsetY;
+
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	for (const shape of shapes) {
+        ctx.beginPath();
+		if (shape.type === 'circle') {	
+			ctx.arc(shape.startX, shape.startY, shape.radius, 0, Math.PI * 2);
+			ctx.fillStyle = 'rgba(0, 0, 255, 1)';	
+		} else if (shape.type === 'rectangle') {
+			ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+			ctx.fillRect(shape.startX, shape.startY, shape.width, shape.height);
+		}
+        ctx.fill();
+		ctx.closePath();
+	}
+
+	if (currentShape === 'circle') {
+		const radius = Math.sqrt(
+			Math.pow(currentX - startX, 2) + Math.pow(currentY - startY, 2)
+		);
+		
+		ctx.arc(startX, startY, radius, 0, Math.PI * 2);
+		ctx.fillStyle = 'rgba(0, 0, 255, 1)';
+		ctx.fill();
+		
+	} else if (currentShape === 'rectangle') {
+		const width = currentX - startX;
+		const height = currentY - startY;
+		ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+		ctx.fillRect(startX, startY, width, height);
+	}
+});
+
+canvas.addEventListener('mouseup', event => {
+	isDrawing = false;
+
+	const currentX = event.offsetX;
+	const currentY = event.offsetY;
+
+	if (currentShape === 'circle') {
+		const radius = Math.sqrt(
+			Math.pow(currentX - startX, 2) + Math.pow(currentY - startY, 2)
+		);
+		shapes.push({
+			type: 'circle',
+			startX: startX,
+			startY: startY,
+			radius: radius,
+		});
+		
+	} else if (currentShape === 'rectangle') {
+		const width = currentX - startX;
+		const height = currentY - startY;
+		shapes.push({
+			type: 'rectangle',
+			startX: startX,
+			startY: startY,
+			width: width,
+			height: height,
+		});
+		
+	}
+
+	currentShape = null;
+}); */

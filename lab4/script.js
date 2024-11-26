@@ -91,20 +91,20 @@ const shirts = [{ //определение массива  содержит об
         "back": "shirt_images/default-m-back.png"
     }
 }];
-//2
+
 let quickViewOpen = false;
-//2
+
 document.addEventListener('DOMContentLoaded', ()=> {
    
     makeCards()
     const quickViewsButtons = document.getElementsByClassName('view-button') 
     for(let i=0; i<quickViewsButtons.length; i++){
         quickViewsButtons[i].addEventListener('click', ()=>{ 
-          //2
+          
             if(quickViewOpen ==  false){
                 quickViewOpen = true;
                 quickViewPress(quickViewsButtons[i].id[quickViewsButtons[i].id.length-1])
-            //2
+            
             }
     })
 }
@@ -143,11 +143,11 @@ function makeCards(){
             h2.textContent = shirts[i].name
         } 
         let color = shirts[i].colors
-       //sd
+       
         p.textContent = Object.keys(color).length.toString()
         seeBut.addEventListener('click', ()=>{
             seeButPress(shirts[i])
-            //2
+            
         })
     }
 }

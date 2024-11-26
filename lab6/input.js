@@ -4,15 +4,23 @@ let isSticky = false;
 let offsetX, offsetY;
 let currentElement = null;
 let originalPosition = { top: 0, left: 0 };
-let touchStartPosition = { x: 0, y: 0 };
-const minSize = 40; 
-
+const minSize = 40;
 
 const updatePosition = (event) => {
     const touch = event.touches ? event.touches[0] : event;
     if (currentElement) {
         currentElement.style.left = (touch.clientX - offsetX) + 'px';
         currentElement.style.top = (touch.clientY - offsetY) + 'px';
+    }
+};
+
+// Обработчик для touchstart в режиме "следующий за пальцем"
+const handleTouchStartForSticky = (event) => {
+    if (isSticky) {
+        isDragging = true;
+        const touch = event.touches[0];
+        offsetX = touch.clientX - currentElement.getBoundingClientRect().left;
+        offsetY = touch.clientY - currentElement.getBoundingClientRect().top;
     }
 };
 
@@ -28,14 +36,17 @@ targets.forEach(target => {
     });
 
     target.addEventListener('touchstart', (event) => {
-        if (isSticky) return;
+        if (isSticky) {
+            currentElement = target;
+            handleTouchStartForSticky(event);
+        } else {
+            isDragging = true;
+            currentElement = target;
 
-        isDragging = true;
-        currentElement = target;
-
-        const touch = event.touches[0];
-        offsetX = touch.clientX - target.getBoundingClientRect().left;
-        offsetY = touch.clientY - target.getBoundingClientRect().top;
+            const touch = event.touches[0];
+            offsetX = touch.clientX - target.getBoundingClientRect().left;
+            offsetY = touch.clientY - target.getBoundingClientRect().top;
+        }
     });
 
     target.addEventListener('dblclick', () => {
@@ -57,7 +68,6 @@ targets.forEach(target => {
     });
 });
 
-
 document.addEventListener('mousemove', (event) => {
     if (isDragging) {
         updatePosition(event);
@@ -70,7 +80,6 @@ document.addEventListener('touchmove', (event) => {
     }
 });
 
-
 document.addEventListener('mouseup', () => {
     if (isDragging) {
         isDragging = false;
@@ -78,13 +87,12 @@ document.addEventListener('mouseup', () => {
     }
 });
 
-document.addEventListener('touchend', () => {
+document.addEventListener('touchend', (event) => {
     if (isDragging) {
         isDragging = false;
         currentElement = null;
     }
 });
-
 
 document.addEventListener('touchstart', (event) => {
     if (event.touches.length > 1) { 
@@ -97,21 +105,6 @@ document.addEventListener('touchstart', (event) => {
             currentElement = null;
         }
     }
-});
-
-
-targets.forEach(target => {
-    target.addEventListener('wheel', (event) => {
-        event.preventDefault(); 
-        let newWidth = parseInt(target.style.width) + (event.deltaY < 0 ? 10 : -10);//Вычисляем новые размеры элемента, увеличивая или уменьшая его ширину и высоту в зависимости от направления прокрутки.
-        let newHeight = parseInt(target.style.height) + (event.deltaY < 0 ? 10 : -10);
-        
-        
-        if (newWidth >= minSize && newHeight >= minSize) {
-            target.style.width = newWidth + 'px';
-            target.style.height = newHeight + 'px';
-        }
-    });
 });
 
 document.addEventListener('keydown', (event) => {

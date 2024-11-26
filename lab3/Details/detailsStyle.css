@@ -1,0 +1,31 @@
+body {
+	display: flex;
+	flex-direction: row;
+}
+
+.imgGroup {
+	margin-left: 50px;
+	padding: 10px;
+	text-align: center;
+}
+
+.priceGroup,
+.settings {
+	margin-top: 100px;
+	margin-bottom: 50px;
+	padding: 20px;
+}
+button {
+	margin: 10px;
+	border-radius: 10px;
+	height: 40px;
+	width: 100px;
+}
+
+.side,
+.color {
+	color: grey;
+	display: flex;
+	flex-direction: row;
+	font-size: 20px;
+}

@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e9ecef; /* Добавлен цвет фона */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Шрифт */
+    color: #343a40; /* Цвет текста */
+}
+
+h2 {
+    margin-bottom: 20px; /* Отступ снизу */
+    font-size: 2rem; /* Размер шрифта заголовка */
+    text-align: center; /* Выравнивание по центру */
+    color: #495057; /* Цвет заголовка */
+}
+
+label {
+    margin: 5px 0; /* Отступ сверху и снизу */
+    font-size: 1.2rem; /* Размер шрифта для меток */
+    display: flex; /* Flex-контейнер для меток */
+    align-items: center; /* Вертикальное выравнивание */
+}
+
+input[type="radio"] {
+    margin-right: 10px; /* Отступ справа для радио-кнопок */
+    accent-color: #fff200; /* Цвет для выбранного радио */
+}
+
+canvas {
+	border: 1px solid #000;
+	cursor: crosshair;
+    background-color: #fff; /* Цвет фона canvas */
+
+
+
+    margin-top: 20px; /* Отступ сверху */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень вокруг canvas */
+
+}
+
+button {
+    padding: 12px 20px; /* Отступы внутри кнопки */
+    margin-top: 15px; /* Отступ сверху */
+    background-color: #ff0095; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста */
+    border: none; /* Без рамки */
+    border-radius: 5px; /* Закругленные углы кнопки */
+    cursor: pointer; /* Курсор при наведении на кнопку */
+    font-size: 1rem; /* Размер шрифта */
+}
+
+button:hover {
+    background-color: #00b327; /* Цвет фона при наведении */
+    transform: translateY(-2px); /* Эффект поднятия при наведении */
+}
+
+footer {
+    margin-top: 20px; /* Отступ сверху для нижнего колонтитула */
+    color: #6c757d; /* Цвет текста для нижнего колонтитула */
+    font-size: 0.9rem; /* Размер шрифта для нижнего колонтитула */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.5rem; /* Уменьшенный размер заголовка на маленьких экранах */
+    }
+    label {
+        font-size: 1rem; /* Уменьшенный размер шрифта для меток */
+    }
+    button {
+        padding: 10px 15px; /* Уменьшенные отступы для кнопки */
+        font-size: 0.9rem; /* Уменьшенный размер шрифта для кнопки */
+    }
+}
