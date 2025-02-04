@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'cook';
+    src: url(nexa-script-thin.ttf);
+}
+@font-face {
+    font-family: 'pump';
+    src: url(parmswijetics.ttf);
+}
+@font-face {
+    font-family: 'minecraft';
+    src: url(ему-2.ttf);
+}
+
+body {
+    background-color: #eb9797; /* Выбранный цвет фона */
+    margin: 0;
+    padding: 0;
+    max-width: 1440px;
+    margin: 0 auto; /* Центрирование контента */
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+a {
+    color: black; /* Якорные ссылки черного цвета */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+#film1 {
+    font-size: 16px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    font-family: 'cook';
+}
+#film2 {
+    font-size: 16px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    font-family: 'pump';
+}
+#film3 {
+    font-size: 2px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    font-family: 'minecraft';
+}
+#film1 p {
+
+    text-align: center; /* Выровнять по центру */
+}
+#film2 p {
+
+    text-align: justify; /* Выровнять по шринеи */
+}
+#film3 p {
+
+    text-align: right; /* Выровнять по прав стороне */
+}
+
+.description {
+    margin: 20px; /* Отступы для описания */
+}
+
+img {
+    width: 250px; /* Размеры изображения */
+    height: 200px;
+    border-radius: 50px; /* Закругленные края */
+}
+
+strong {
+    font-weight: bold; /* Увеличиваем жирность текста */
+}
+
+/* Применение различных способов выделения текста */
+.highlight {
+    font-weight: bold; /* Используя css свойство */
+}
